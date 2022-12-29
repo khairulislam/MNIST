@@ -106,7 +106,7 @@ def test_elapsed_time(model, device, test_loader, run):
         for data, target in tqdm(test_loader, desc=f'Test:', disable=DISABLE_PROGRESS):
             data, target = data.to(device), target.to(device)
             _ = model(data)
-            break
+        #    break
         
     elapsed_time = time.perf_counter() - start_time
     print(f'Run {run}, Elapsed time {elapsed_time:.4f} seconds.')
@@ -115,7 +115,7 @@ def test_elapsed_time(model, device, test_loader, run):
     return elapsed_time
 
 # %%
-RUNS = 1
+RUNS = 5
 print(f'\nRunning test {RUNS} times.')
 
 test_times = []
